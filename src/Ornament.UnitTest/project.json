@@ -1,0 +1,27 @@
+{
+
+  "version": "1.0.1-*",
+  "buildOptions": {
+    "emitEntryPoint": false
+  },
+  "dependencies": {
+    "xunit": "2.2.0-beta2-build3300",
+    "Ornament": "1.0.0-*",
+    "dotnet-test-xunit": "2.2.0-preview2-build1029"
+  },
+  "testRunner": "xunit",
+  "frameworks": {
+    "net461": {
+      "imports": [ "dnxcore50", "net461" ],
+      "dependencies": {
+       
+      }
+    },
+    "netcoreapp1.0": {
+      "dependencies": {
+        "Microsoft.NETCore.App": "1.0.1"
+      },
+      "imports": [ "dnxcore50", "net461" ]
+    }
+  }
+}
