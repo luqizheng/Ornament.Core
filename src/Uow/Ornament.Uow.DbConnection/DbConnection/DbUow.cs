@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Data;
-using Ornament.Uow;
 
 namespace Ornament.Uow.DbConnection
 {

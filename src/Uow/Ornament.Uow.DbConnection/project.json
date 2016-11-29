@@ -4,12 +4,17 @@
     "debugType": "portable"
   },
   "dependencies": {
-    "Ornament": "1.0.0-*",
-  
+    "Ornament": "1.0.0-*",  
     "System.Data.Common": "4.3.0",
     "System.Data.SqlClient": "4.3.0"
   },
   "frameworks": {
+    "net461": {
+      "frameworkAssemblies": {
+        "System.ComponentModel.Composition": "4.0.0.0",
+        "System.ComponentModel.DataAnnotations": "4.0.0.0"
+      }
+    },
     "netstandard1.6": {
       "dependencies": {
         "NETStandard.Library": "1.6.1"
