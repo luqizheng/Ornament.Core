@@ -3,7 +3,7 @@ using System.Linq;
 using Ornament.Domain.Entities;
 using Ornament.Uow;
 
-namespace Ornament.Domain.Stores
+namespace Ornament.Stores
 {
     /// <summary>
     ///     Class StoreBase.
@@ -11,7 +11,7 @@ namespace Ornament.Domain.Stores
     /// <typeparam name="T"></typeparam>
     /// <typeparam name="TId">The type of the t identifier.</typeparam>
     /// <typeparam name="TUnitOfWork"></typeparam>
-    /// <seealso cref="Ornament.Domain.Stores.IStore{T, TId}" />
+    /// <seealso cref="IStore{T,TId}" />
     public abstract class StoreBase<T, TId, TUnitOfWork> : IStore<T, TId>
         where T : EntityWithTypedId<TId>
         where TId : IEquatable<TId>

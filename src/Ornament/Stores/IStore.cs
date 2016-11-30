@@ -2,7 +2,7 @@
 using System.Linq;
 using Ornament.Domain.Entities;
 
-namespace Ornament.Domain.Stores
+namespace Ornament.Stores
 {
     public interface IStore<T, TId>: IDisposable
         where T : EntityWithTypedId<TId>
