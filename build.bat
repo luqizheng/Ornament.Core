@@ -1,1 +1,1 @@
-dotnet build src/Ornament -c:Release -o:.\Bin\net461 --framework:net461
+dotnet build src/Ornament.Domain -c:Release -o:.\Bin\net461 --framework:net461

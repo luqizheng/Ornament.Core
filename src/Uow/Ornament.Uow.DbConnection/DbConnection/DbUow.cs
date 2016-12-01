@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Data;
+using Ornament.Domain.Uow;
 
 namespace Ornament.Uow.DbConnection
 {
     /// <summary>
     /// 
     /// </summary>
-    public class DbUow : IUnitOfWork
+    public  class DbUow : IUnitOfWork
     {
         private readonly bool _isTranscation;
         private bool _selfClose;

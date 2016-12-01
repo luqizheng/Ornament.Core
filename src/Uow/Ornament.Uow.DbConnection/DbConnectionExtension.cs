@@ -10,7 +10,7 @@ namespace Ornament.Uow
             string connectionstring, bool transcation = false)
         {
             services.AddScoped(sp => new DbUow(new SqlConnection(connectionstring), transcation));
-           return services; 
+            return services;
         }
     }
 }

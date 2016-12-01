@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Linq;
-using Ornament.Domain.Entities;
-using Ornament.Uow;
+using Ornament.Domain.Uow;
 
-namespace Ornament.Stores
+namespace Ornament.Domain.Stores
 {
     /// <summary>
     ///     Class StoreBase.
@@ -12,8 +11,8 @@ namespace Ornament.Stores
     /// <typeparam name="TId">The type of the t identifier.</typeparam>
     /// <typeparam name="TUnitOfWork"></typeparam>
     /// <seealso cref="IStore{T,TId}" />
-    public abstract class StoreBase<T, TId, TUnitOfWork> : IStore<T, TId>
-        where T : EntityWithTypedId<TId>
+    public abstract class StoreBase<T, TId, TUnitOfWork> : IStore<T, TId, TUnitOfWork>
+        where T : class
         where TId : IEquatable<TId>
         where TUnitOfWork : IUnitOfWork
     {
@@ -70,11 +69,6 @@ namespace Ornament.Stores
         /// <value>The entities.</value>
         public abstract IQueryable<T> Entities { get; }
 
-        /// <summary>
-        ///     Saves the or update.
-        /// </summary>
-        /// <param name="t">The t.</param>
-        public abstract void SaveOrUpdate(T t);
 
         /// <summary>
         ///     Deletes the specified t.
@@ -90,12 +84,19 @@ namespace Ornament.Stores
         /// <returns>T.</returns>
         public abstract T Get(TId id);
 
-        /// <summary>
-        ///     Loads the specified identifier.
-        /// </summary>
-        /// <param name="id">The identifier.</param>
-        /// <returns>T.</returns>
-        public abstract T Load(TId id);
+        public void Dispose()
+        {
+            if (_selfHandlerUow)
+                Uow.Dispose();
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        public abstract void Update(T t);
+
+
+        public abstract void Add(T t);
+
 
         /// <summary>
         ///     Throws if disposed.
@@ -116,26 +117,7 @@ namespace Ornament.Stores
         /// </param>
         protected virtual void Dispose(bool disposing)
         {
-          
             _disposed = true;
         }
-
-        public void Dispose()
-        {
-            if (_selfHandlerUow)
-                Uow.Dispose();
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-        public abstract void Update(T t);
-
-
-        public abstract T Merge(T t);
-
-        public abstract void Save(T t);
-
-        public abstract void SaveChange();
-      
     }
 }

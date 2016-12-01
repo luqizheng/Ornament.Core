@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Ornament.Uow
+namespace Ornament.Domain.Uow
 {
     /// <summary>
     ///     Interface IUnitOfWork

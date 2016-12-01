@@ -5,6 +5,7 @@ using System.Threading;
 
 namespace Ornament.Collecions.Concurrent
 {
+
     /// <summary>
     ///     Thread-safe heap-based resizable max-priority queue.
     ///     Elements with high priority are served before elements with low priority.
@@ -49,7 +50,7 @@ namespace Ornament.Collecions.Concurrent
 
         public void Dispose()
         {
-            ((IDisposable) _lock).Dispose();
+            ((IDisposable)_lock).Dispose();
         }
 
         public bool TryAdd(T item)
@@ -77,7 +78,7 @@ namespace Ornament.Collecions.Concurrent
             _lock.EnterReadLock();
             try
             {
-                base.CopyTo((T[]) array, index);
+                base.CopyTo((T[])array, index);
             }
             finally
             {
@@ -178,18 +179,19 @@ namespace Ornament.Collecions.Concurrent
             }
         }
 
-        public override T Peek()
+        public override bool TryPeek(out T t)
         {
             _lock.EnterReadLock();
             try
             {
-                return base.Peek();
+                return base.TryPeek(out t);
             }
             finally
             {
                 _lock.ExitReadLock();
             }
         }
+
 
         //public override bool Remove(T item)
         //{

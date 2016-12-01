@@ -17,8 +17,7 @@ namespace Ornament.Collecions
     /// <remarks>
     ///     https://github.com/dshulepov/DataStructures
     /// </remarks>
-    public class PriorityQueue<T> : IEnumerable<T>, IEnumerable, ICollection, IReadOnlyCollection<T>
-
+    public class PriorityQueue<T> : IEnumerable<T>
     {
         private const int DEFAULT_CAPACITY = 10;
         private const int SHRINK_RATIO = 4;
@@ -29,7 +28,7 @@ namespace Ornament.Collecions
             new InvalidOperationException("Collection is empty.");
 
         private readonly IComparer<T> _comparer;
-        internal T[] _heap;
+        public T[] _heap;
 
         private int _shrinkBound;
 
@@ -60,18 +59,16 @@ namespace Ornament.Collecions
                 throw new ArgumentOutOfRangeException("capacity", "Expected capacity greater than zero.");
 #if !NETSTANDARD1_6
             // If no comparer then T must be comparable
-            if (comparer == null &&
+            if ((comparer == null) &&
                 !(typeof(IComparable).IsAssignableFrom(typeof(T)) ||
                   typeof(IComparable<T>).IsAssignableFrom(typeof(T))))
-            {
                 throw new ArgumentException("Expected a comparer for types, which do not implement IComparable.",
                     "comparer");
-            }
 #endif
 
 
             _comparer = comparer ?? Comparer<T>.Default;
-            _shrinkBound = capacity/SHRINK_RATIO;
+            _shrinkBound = capacity / SHRINK_RATIO;
             _heap = new T[capacity];
         }
 
@@ -99,21 +96,33 @@ namespace Ornament.Collecions
         //    return true;
         //}
 
-        /// <summary>从特定的 <see cref="T:System.Array" /> 索引处开始，将 <see cref="T:System.Collections.ICollection" /> 的元素复制到一个 <see cref="T:System.Array" /> 中。</summary>
-        /// <param name="array">作为从 <see cref="T:System.Collections.ICollection" /> 复制的元素的目标的一维 <see cref="T:System.Array" />。 <see cref="T:System.Array" /> 必须具有从零开始的索引。</param>
+        /// <summary>
+        ///     从特定的 <see cref="T:System.Array" /> 索引处开始，将 <see cref="T:System.Collections.ICollection" /> 的元素复制到一个
+        ///     <see cref="T:System.Array" /> 中。
+        /// </summary>
+        /// <param name="array">
+        ///     作为从 <see cref="T:System.Collections.ICollection" /> 复制的元素的目标的一维 <see cref="T:System.Array" />。
+        ///     <see cref="T:System.Array" /> 必须具有从零开始的索引。
+        /// </param>
         /// <param name="index">
-        /// <paramref name="array" /> 中从零开始的索引，从此索引处开始进行复制。</param>
+        ///     <paramref name="array" /> 中从零开始的索引，从此索引处开始进行复制。
+        /// </param>
         /// <exception cref="T:System.ArgumentNullException">
-        /// <paramref name="array" /> 为 null。</exception>
+        ///     <paramref name="array" /> 为 null。
+        /// </exception>
         /// <exception cref="T:System.ArgumentOutOfRangeException">
-        /// <paramref name="index" /> 小于零。</exception>
+        ///     <paramref name="index" /> 小于零。
+        /// </exception>
         /// <exception cref="T:System.ArgumentException">
-        /// <paramref name="array" /> 是多维的。 - 或 - 源 <see cref="T:System.Collections.ICollection" /> 中的元素数目大于从 <paramref name="index" /> 到目标 <paramref name="array" /> 末尾之间的可用空间。 - 或 - 源 <see cref="T:System.Collections.ICollection" /> 的类型无法自动转换为目标 <paramref name="array" /> 的类型。</exception>
+        ///     <paramref name="array" /> 是多维的。 - 或 - 源 <see cref="T:System.Collections.ICollection" /> 中的元素数目大于从
+        ///     <paramref name="index" /> 到目标 <paramref name="array" /> 末尾之间的可用空间。 - 或 - 源
+        ///     <see cref="T:System.Collections.ICollection" /> 的类型无法自动转换为目标 <paramref name="array" /> 的类型。
+        /// </exception>
         /// <filterpriority>2</filterpriority>
-        void ICollection.CopyTo(Array array, int index)
-        {
-            this.CopyTo((T[])array,index);
-        }
+        //public void CopyTo(Array array, int index)
+        //{
+        //    CopyTo((T[])array, index);
+        //}
 
         public int Count { get; private set; }
         public object SyncRoot { get; }
@@ -123,7 +132,7 @@ namespace Ornament.Collecions
         {
             var array = new T[Count];
             CopyTo(array, 0);
-            return ((IEnumerable<T>) array).GetEnumerator();
+            return ((IEnumerable<T>)array).GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()
@@ -153,8 +162,8 @@ namespace Ornament.Collecions
 
         public virtual void CopyTo(T[] array, int arrayIndex)
         {
-            if (array == null) throw new ArgumentNullException("array");
-            if (arrayIndex < 0) throw new ArgumentOutOfRangeException("arrayIndex");
+            if (array == null) throw new ArgumentNullException(nameof(array));
+            if (arrayIndex < 0) throw new ArgumentOutOfRangeException(nameof(arrayIndex));
 
             if (array.Length - arrayIndex < Count)
                 throw new ArgumentException("Insufficient space in destination array.");
@@ -180,10 +189,8 @@ namespace Ornament.Collecions
             // provide index of first item as for 1-based heap, but also set shift to -1
             _heap.Sink(1, Count, _comparer, -1); // move item "down" while heap principles are not met            
 
-            if (Count <= _shrinkBound && Count > DEFAULT_CAPACITY)
-            {
+            if ((Count <= _shrinkBound) && (Count > DEFAULT_CAPACITY))
                 ShrinkCapacity();
-            }
 
             return item;
         }
@@ -193,10 +200,13 @@ namespace Ornament.Collecions
         /// </summary>
         /// <returns>Max element in the collection</returns>
         /// <exception cref="InvalidOperationException">Throws <see cref="InvalidOperationException" /> when queue is empty.</exception>
-        public virtual T Peek()
+        public virtual bool TryPeek(out T t)
         {
-            if (Count == 0) throw EmptyCollectionException;
-            return _heap[0];
+            t = default(T);
+            if (Count == 0)
+                return false;
+            t = _heap[0];
+            return true;
         }
 
         ///// <summary>
@@ -234,25 +244,33 @@ namespace Ornament.Collecions
         protected internal int GetItemIndex(T item)
         {
             for (var i = 0; i < Count; i++)
-            {
                 if (_comparer.Compare(_heap[i], item) == 0) return i;
-            }
             return -1;
         }
 
 
         private void GrowCapacity()
         {
-            var newCapacity = Capacity*RESIZE_FACTOR;
+            var newCapacity = Capacity * RESIZE_FACTOR;
             Array.Resize(ref _heap, newCapacity); // first element is at position 1
-            _shrinkBound = newCapacity/SHRINK_RATIO;
+            _shrinkBound = newCapacity / SHRINK_RATIO;
         }
 
         private void ShrinkCapacity()
         {
-            var newCapacity = Capacity/RESIZE_FACTOR;
+            var newCapacity = Capacity / RESIZE_FACTOR;
             Array.Resize(ref _heap, newCapacity); // first element is at position 1
-            _shrinkBound = newCapacity/SHRINK_RATIO;
+            _shrinkBound = newCapacity / SHRINK_RATIO;
+        }
+
+        public T Peek()
+        {
+            T t;
+            if (this.TryPeek(out t))
+            {
+                return t;
+            }
+            throw new ArgumentNullException("Collection is empty");
         }
     }
 
@@ -288,11 +306,9 @@ namespace Ornament.Collecions
             while (true)
             {
                 var itemIndex = i + shift;
-                var leftIndex = 2*i + shift;
+                var leftIndex = 2 * i + shift;
                 if (leftIndex > lastIndex)
-                {
                     return; // reached last item
-                }
 
                 var rightIndex = leftIndex + 1;
                 var hasRight = rightIndex <= lastIndex;
@@ -303,9 +319,7 @@ namespace Ornament.Collecions
 
                 // if item is greater than children - heap is fine, exit
                 if (GreaterOrEqual(comparer, item, left) && (!hasRight || GreaterOrEqual(comparer, item, right)))
-                {
                     return;
-                }
 
                 // else exchange with greater of children
                 var greaterChildIndex = !hasRight || GreaterOrEqual(comparer, left, right) ? leftIndex : rightIndex;
@@ -332,14 +346,12 @@ namespace Ornament.Collecions
             while (true)
             {
                 if (i <= 1) return; // reached root
-                var parent = i/2 + shift; // get parent
+                var parent = i / 2 + shift; // get parent
                 var index = i + shift;
 
                 // if root is greater or equal - exit
                 if (GreaterOrEqual(comparer, heap[parent], heap[index]))
-                {
                     return;
-                }
 
                 heap.Swap(parent, index);
                 i = parent - shift;
