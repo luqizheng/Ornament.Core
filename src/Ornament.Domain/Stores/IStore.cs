@@ -4,10 +4,9 @@ using Ornament.Domain.Uow;
 
 namespace Ornament.Domain.Stores
 {
-    public interface IStore<T, TId, TUow> : IDisposable
+    public interface IStore<T, TId> : IDisposable
         where T : class
-        where TId : IEquatable<TId>
-        where TUow : IUnitOfWork
+        where TId : IEquatable<TId>      
     {
         IQueryable<T> Entities { get; }
         void Add(T t);

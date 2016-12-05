@@ -1,11 +1,11 @@
 ﻿{
-  "version": "1.0.0-*",
+  "version": "1.0.2-*",
   "buildOptions": {
     "debugType": "portable"
   },
   "dependencies": {
-    "NETStandard.Library": "1.6.0",
-    "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
+    "Microsoft.Extensions.DependencyInjection.Abstractions": "1.1.0",
+    "NETStandard.Library": "1.6.1"
   },
 
   "frameworks": {
@@ -21,8 +21,8 @@
       "dependencies": {
 
         "System.ComponentModel.Annotations": "4.1.0",
-        "System.Linq": "4.1.0",
-        "System.Collections.Concurrent": "4.0.12"
+        "System.Linq": "4.3.0",
+        "System.Collections.Concurrent": "4.3.0"
 
       }
     }

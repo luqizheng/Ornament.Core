@@ -1,0 +1,15 @@
+{
+  "version": "0.1.0-*",
+
+  "dependencies": {
+    "Microsoft.AspNetCore.Mvc": "1.1.0",
+    "NETStandard.Library": "1.6.1",
+    "Ornament.Domain": "1.0.2"
+  },
+
+  "frameworks": {
+    "netstandard1.6": {
+      "imports": "dnxcore50"
+    }
+  }
+}

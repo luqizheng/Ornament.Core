@@ -10,8 +10,10 @@ namespace Ornament.Domain.Stores
     /// <typeparam name="T"></typeparam>
     /// <typeparam name="TId">The type of the t identifier.</typeparam>
     /// <typeparam name="TUnitOfWork"></typeparam>
-    /// <seealso cref="IStore{T,TId}" />
-    public abstract class StoreBase<T, TId, TUnitOfWork> : IStore<T, TId, TUnitOfWork>
+    /// <seealso>
+    ///     <cref>IStore{T,TId}</cref>
+    /// </seealso>
+    public abstract class StoreBase<T, TId, TUnitOfWork> : IStore<T, TId>
         where T : class
         where TId : IEquatable<TId>
         where TUnitOfWork : IUnitOfWork
