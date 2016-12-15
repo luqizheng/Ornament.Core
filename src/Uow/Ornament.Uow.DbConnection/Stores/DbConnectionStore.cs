@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Ornament.Domain.Stores;
-using Ornament.Uow.DbConnection;
+using Ornament.Uow;
 
-namespace Ornament.Uow.Stores
+namespace Ornament.Stores
 {
     public abstract class DbConnectionStore<T, TID> : StoreBase<T, TID, DbUow>
         where T : class
