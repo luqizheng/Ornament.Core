@@ -1,41 +1,42 @@
 ﻿using System;
 using System.Data;
 using Microsoft.Extensions.DependencyInjection;
-using Ornament.Domain.Uow;
 
 namespace Ornament.Uow
 {
-    public class UowSqSetting
-    {
-        public string ConnectionString { get; set; }
-        public bool BeginTranscation { get; set; } = false;
-        public IsolationLevel? IsolationLevel { get; set; }
-
-        public Func<string, IDbConnection> CreateConnection { get; set; }
-    }
-
     public static class DbConnectionExtension
     {
         public static IServiceCollection AddDbUow(this IServiceCollection services,
-          Action<UowSqSetting> configFactory)
+            Func<IDbConnection> connectionBuilder)
         {
-            return services.AddDbUow<DbUow>(configFactory);
+            return services.AddDbUow<DbUow>(connectionBuilder, true);
         }
 
-        public static IServiceCollection AddDbUow<T>(this IServiceCollection services, Action<UowSqSetting> configFactory)
+        /// <summary>
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="services"></param>
+        /// <param name="connectionBuilder"></param>
+        /// <param name="isDefault"></param>
+        /// <returns></returns>
+        public static IServiceCollection AddDbUow<T>(this IServiceCollection services,
+            Func<IDbConnection> connectionBuilder, bool isDefault = false)
             where T : DbUow
         {
-            var setting = new UowSqSetting();
-            configFactory(setting);
-            if (setting.CreateConnection == null)
-                throw new UowExcepton("Please setting CreateConnection action");
-            services.AddScoped(sp => new DbUow(setting.CreateConnection(setting.ConnectionString))
+            services.AddScoped(sp =>
             {
-                IsolationLevel = setting.IsolationLevel,
-                BeginTranscation = setting.BeginTranscation,
+                var c = sp.GetRequiredService<T>();
+                c.Connection = connectionBuilder();
+                return c;
             });
+            if (isDefault)
+                services.AddScoped(sp =>
+                {
+                    var c = sp.GetRequiredService<T>();
+                    c.Connection = connectionBuilder();
+                    return (DbUow) c;
+                });
             return services;
-
         }
     }
 }

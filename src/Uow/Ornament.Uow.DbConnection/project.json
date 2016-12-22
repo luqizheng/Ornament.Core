@@ -1,12 +1,12 @@
 {
-  "version": "1.0.6-*",
+  "version": "1.0.8-*",
   "buildOptions": {
     "debugType": "portable"
   },
   "dependencies": {
     "Ornament.Domain": "1.0.2-*",
     "System.Data.Common": "4.3.0",
-    
+
     "System.Data.SqlClient": "4.3.0"
   },
   "frameworks": {

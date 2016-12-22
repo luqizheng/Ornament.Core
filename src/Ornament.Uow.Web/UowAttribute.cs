@@ -4,6 +4,9 @@ using Ornament.Domain.Uow;
 
 namespace Ornament.Uow.Web
 {
+    /// <summary>
+    ///     用于启动默认Uow
+    /// </summary>
     public class UowAttribute : ActionFilterAttribute
     {
         private readonly Type _uowType;
@@ -14,7 +17,7 @@ namespace Ornament.Uow.Web
         }
 
 
-        public IUnitOfWork GetUnitOfWork(IServiceProvider context)
+        public virtual IUnitOfWork GetUnitOfWork(IServiceProvider context)
         {
             if (_uowType == null)
                 return (IUnitOfWork) context.GetService(_uowType);

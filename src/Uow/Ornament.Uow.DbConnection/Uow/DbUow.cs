@@ -8,7 +8,6 @@ namespace Ornament.Uow
     /// </summary>
     public class DbUow : IUnitOfWork
     {
-
         private bool _selfClose;
 
         /// <summary>
@@ -18,16 +17,21 @@ namespace Ornament.Uow
         {
             if (connection == null) throw new ArgumentNullException(nameof(connection));
             Connection = connection;
+        }
+
+        internal DbUow()
+        {
 
         }
-        public bool BeginTranscation { get; set; }
+        public bool EnableTranscation { get; set; }
+
         /// <summary>
         /// </summary>
         public IsolationLevel? IsolationLevel { get; set; }
 
         /// <summary>
         /// </summary>
-        public IDbConnection Connection { get; }
+        public IDbConnection Connection { get; internal set; }
 
         /// <summary>
         /// </summary>
@@ -52,7 +56,8 @@ namespace Ornament.Uow
             if (HadBegun) return;
             _selfClose = true;
             Connection.Open();
-            if (!BeginTranscation) return;
+
+            if (!EnableTranscation) return;
             DbTransaction = IsolationLevel != null
                 ? Connection.BeginTransaction(IsolationLevel.Value)
                 : Connection.BeginTransaction();

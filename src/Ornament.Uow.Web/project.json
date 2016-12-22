@@ -1,10 +1,12 @@
 {
-  "version": "0.1.0-*",
+  "version": "0.2.0-*",
 
   "dependencies": {
     "Microsoft.AspNetCore.Mvc": "1.1.0",
     "NETStandard.Library": "1.6.1",
-    "Ornament.Domain": "1.0.2"
+    "Ornament.Domain": "1.0.2",
+    "Ornament.Uow.DbConnection": "1.0.7-*",
+    "System.Data.Common": "4.3.0"
   },
 
   "frameworks": {
