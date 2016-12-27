@@ -4,9 +4,9 @@ using Ornament.Uow;
 
 namespace Ornament.Stores
 {
-    public abstract class DbConnectionStore<T, TID> : StoreBase<T, TID, DbUow>
+    public abstract class DbConnectionStore<T, TId> : StoreBase<T, TId, DbUow>
         where T : class
-        where TID : IEquatable<TID>
+        where TId : IEquatable<TId>
 
     {
         protected DbConnectionStore(DbUow context) : base(context)

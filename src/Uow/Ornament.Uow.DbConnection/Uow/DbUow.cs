@@ -19,10 +19,7 @@ namespace Ornament.Uow
             Connection = connection;
         }
 
-        internal DbUow()
-        {
 
-        }
         public bool EnableTranscation { get; set; }
 
         /// <summary>
