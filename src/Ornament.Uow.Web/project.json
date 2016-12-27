@@ -1,6 +1,14 @@
 {
   "version": "0.2.1-*",
-
+  "packOptions": {
+    
+    "repository": {
+      "url": "https://github.com/luqizheng/Ornament.Core"
+    },
+    "projectUrl": "https://github.com/luqizheng/Ornament.Core",
+    "tags": ["Ornament","UOW","Unit of work","MVC","asp.core",".net core"],
+    "summary": "Web for Unit of work"
+  },
   "dependencies": {
     "Microsoft.AspNetCore.Mvc": "1.1.0",
     "NETStandard.Library": "1.6.1",

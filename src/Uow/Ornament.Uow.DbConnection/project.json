@@ -8,6 +8,14 @@
     "System.Data.Common": "4.3.0",
 
     "System.Data.SqlClient": "4.3.0"
+  },"packOptions": {
+    
+    "repository": {
+      "url": "https://github.com/luqizheng/Ornament.Core"
+    },
+    "projectUrl": "https://github.com/luqizheng/Ornament.Core",
+    "tags": ["Ornament","UOW","Unit of work","MVC","asp.core",".net core"],
+    "summary": "DBConnection for Unit of work"
   },
   "frameworks": {
     "net461": {
