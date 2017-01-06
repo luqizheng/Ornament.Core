@@ -6,13 +6,8 @@ namespace Ornament.Domain.Stores
 {
     public interface IStore<T, TId> : IDisposable
         where T : class
-        where TId : IEquatable<TId>      
+        where TId : IEquatable<TId>
     {
-        IQueryable<T> Entities { get; }
-        void Add(T t);
-        void Update(T t);
-        void Delete(T t);
-
-        T Get(TId id);
+        IUnitOfWork Uow { get; }
     }
 }

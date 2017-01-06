@@ -4,7 +4,6 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Ornament.Uow
 {
-
     public static class DbConnectionExtension
     {
         public static IServiceCollection AddDbUow(this IServiceCollection services,
@@ -24,14 +23,13 @@ namespace Ornament.Uow
             Func<T> uowBuider, bool isDefault = false)
             where T : DbUow
         {
-
             services.AddScoped(sp => uowBuider());
 
-            if (isDefault && typeof(T) != typeof(DbUow))
-                services.AddScoped<DbUow>(sp =>
+            if (isDefault && (typeof(T) != typeof(DbUow)))
+                services.AddScoped(sp =>
                 {
                     var c = sp.GetService<T>();
-                    return (DbUow)c;
+                    return (DbUow) c;
                 });
             return services;
         }

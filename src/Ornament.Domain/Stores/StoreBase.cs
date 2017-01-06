@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using Ornament.Domain.Uow;
 
 namespace Ornament.Domain.Stores
@@ -31,7 +30,10 @@ namespace Ornament.Domain.Stores
         private bool _selfHandlerUow;
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="StoreBase{T, TId}" /> class.
+        ///     Initializes a new instance of the <see>
+        ///         <cref>StoreBase{T, TId}</cref>
+        ///     </see>
+        ///     class.
         /// </summary>
         /// <param name="context">The context.</param>
         /// <exception cref="ArgumentNullException"></exception>
@@ -65,26 +67,7 @@ namespace Ornament.Domain.Stores
         }
 
 
-        /// <summary>
-        ///     Gets the entities.
-        /// </summary>
-        /// <value>The entities.</value>
-        public abstract IQueryable<T> Entities { get; }
-
-
-        /// <summary>
-        ///     Deletes the specified t.
-        /// </summary>
-        /// <param name="t">The t.</param>
-        public abstract void Delete(T t);
-
-
-        /// <summary>
-        ///     Gets the specified identifier.
-        /// </summary>
-        /// <param name="id">The identifier.</param>
-        /// <returns>T.</returns>
-        public abstract T Get(TId id);
+        IUnitOfWork IStore<T, TId>.Uow => Uow;
 
         public void Dispose()
         {
@@ -93,12 +76,6 @@ namespace Ornament.Domain.Stores
             Dispose(true);
             GC.SuppressFinalize(this);
         }
-
-        public abstract void Update(T t);
-
-
-        public abstract void Add(T t);
-
 
         /// <summary>
         ///     Throws if disposed.
