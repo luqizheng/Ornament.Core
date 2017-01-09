@@ -30,7 +30,8 @@ namespace Ornament.Domain.Stores
         private bool _selfHandlerUow;
 
         /// <summary>
-        ///     Initializes a new instance of the <see>
+        ///     Initializes a new instance of the
+        ///     <see>
         ///         <cref>StoreBase{T, TId}</cref>
         ///     </see>
         ///     class.
@@ -48,8 +49,7 @@ namespace Ornament.Domain.Stores
         /// <summary>
         ///     Gets the uow provider.
         /// </summary>
-        /// <value>The uow provider.</value>
-        public TUnitOfWork Uow
+        public virtual TUnitOfWork Uow
         {
             get
             {
@@ -66,10 +66,14 @@ namespace Ornament.Domain.Stores
             }
         }
 
-
+        /// <summary>
+        ///     Gets the uow provider.
+        /// </summary>
+        /// <value>The uow provider.</value>
         IUnitOfWork IStore<T, TId>.Uow => Uow;
 
-        public void Dispose()
+
+        public virtual void Dispose()
         {
             if (_selfHandlerUow)
                 Uow.Dispose();
@@ -81,7 +85,7 @@ namespace Ornament.Domain.Stores
         ///     Throws if disposed.
         /// </summary>
         /// <exception cref="ObjectDisposedException"></exception>
-        protected void ThrowIfDisposed()
+        protected virtual void ThrowIfDisposed()
         {
             if (_disposed)
                 throw new ObjectDisposedException(GetType().Name);
