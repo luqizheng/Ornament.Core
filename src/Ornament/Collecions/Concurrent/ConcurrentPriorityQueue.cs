@@ -47,18 +47,28 @@ namespace Ornament.Collecions.Concurrent
         public ConcurrentPriorityQueue(int capacity, IComparer<T> comparer = null) : base(capacity, comparer)
         {
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public void Dispose()
         {
             ((IDisposable)_lock).Dispose();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
         public bool TryAdd(T item)
         {
             Enqueue(item);
             return true;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="array"></param>
+        /// <param name="arrayIndex"></param>
         public override void CopyTo(T[] array, int arrayIndex)
         {
             var hasLock = _lock.IsReadLockHeld;
@@ -72,7 +82,11 @@ namespace Ornament.Collecions.Concurrent
                 if (!hasLock) _lock.ExitReadLock();
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="array"></param>
+        /// <param name="index"></param>
         public void CopyTo(Array array, int index)
         {
             _lock.EnterReadLock();
@@ -85,7 +99,10 @@ namespace Ornament.Collecions.Concurrent
                 _lock.ExitReadLock();
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public T[] ToArray()
         {
             _lock.EnterReadLock();
@@ -100,7 +117,10 @@ namespace Ornament.Collecions.Concurrent
                 _lock.ExitReadLock();
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public override IEnumerator<T> GetEnumerator()
         {
             _lock.EnterReadLock();
@@ -113,7 +133,11 @@ namespace Ornament.Collecions.Concurrent
                 _lock.ExitReadLock();
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
         public bool TryTake(out T item)
         {
             item = default(T);
@@ -129,17 +153,24 @@ namespace Ornament.Collecions.Concurrent
                 _lock.ExitUpgradeableReadLock();
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public new object SyncRoot
         {
             get { throw new NotSupportedException(""); }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public new bool IsSynchronized
         {
             get { return false; }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="item"></param>
         public override void Enqueue(T item)
         {
             _lock.EnterWriteLock();
@@ -152,7 +183,9 @@ namespace Ornament.Collecions.Concurrent
                 _lock.ExitWriteLock();
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public override void Clear()
         {
             _lock.EnterWriteLock();
@@ -165,7 +198,11 @@ namespace Ornament.Collecions.Concurrent
                 _lock.ExitWriteLock();
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
         public override bool Contains(T item)
         {
             _lock.EnterReadLock();

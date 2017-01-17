@@ -4,8 +4,15 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Ornament.Uow
 {
+    /// <summary>
+    /// </summary>
     public static class DbConnectionExtension
     {
+        /// <summary>
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="connectionBuilder"></param>
+        /// <returns></returns>
         public static IServiceCollection AddDbUow(this IServiceCollection services,
             Func<IDbConnection> connectionBuilder)
         {
@@ -17,7 +24,7 @@ namespace Ornament.Uow
         /// <typeparam name="T"></typeparam>
         /// <param name="services"></param>
         /// <param name="uowBuider"></param>
-        /// <param name="isDefault">for dependcy dbuow class</param>
+        /// <param name="isDefault">if true, use Resolve(typeof(DbUow)) return this Uow.</param>
         /// <returns></returns>
         public static IServiceCollection AddDbUow<T>(this IServiceCollection services,
             Func<T> uowBuider, bool isDefault = false)

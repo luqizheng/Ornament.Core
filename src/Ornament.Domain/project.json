@@ -9,7 +9,7 @@
     "System.ComponentModel.Annotations": "4.3.0"
   },
   "packOptions": {
-    
+
     "repository": {
       "url": "https://github.com/luqizheng/Ornament.Core"
     },
@@ -22,7 +22,7 @@
       "asp.core",
       ".net core"
     ],
-    "summary": "DDD implement"
+    "summary": "DDD implement.For learn, use Abp pls"
   },
   "frameworks": {
     "net461": {

@@ -4,6 +4,9 @@ using Ornament.Domain.Uow;
 
 namespace Ornament.Uow
 {
+    /// <summary>
+    /// </summary>
+    /// <typeparam name="TDbContext"></typeparam>
     public class EfUow<TDbContext> : IUnitOfWork
         where TDbContext : DbContext
     {
@@ -17,8 +20,12 @@ namespace Ornament.Uow
         }
 
 
-        public bool EnableTranscation { get; set; }
+        /// <summary>
+        /// </summary>
+        public bool EnableTransaction { get; set; }
 
+        /// <summary>
+        /// </summary>
         public DbContext Context { get; }
 
         /// <summary>
@@ -36,7 +43,7 @@ namespace Ornament.Uow
         /// </summary>
         public void Begin()
         {
-            Context.Database.AutoTransactionsEnabled = EnableTranscation;
+            Context.Database.AutoTransactionsEnabled = EnableTransaction;
 
             HadBegun = true;
         }
@@ -45,7 +52,7 @@ namespace Ornament.Uow
         /// </summary>
         public void Rollback()
         {
-            if (EnableTranscation)
+            if (EnableTransaction)
                 Context.Database.RollbackTransaction();
         }
 
@@ -53,7 +60,7 @@ namespace Ornament.Uow
         /// </summary>
         public void Commit()
         {
-            if (EnableTranscation)
+            if (EnableTransaction)
                 Context.Database.CommitTransaction();
             Context.SaveChanges();
         }

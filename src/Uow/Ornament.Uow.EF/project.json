@@ -11,7 +11,7 @@
   "dependencies": {
     "Microsoft.EntityFrameworkCore.Relational": "1.1.0",
     "NETStandard.Library": "1.6.1",
-    "Ornament.Domain": "1.0.2"
+    "Ornament.Domain": "1.0.3"
   },
 
   "frameworks": {

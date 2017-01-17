@@ -5,15 +5,24 @@ using System.Threading;
 
 namespace Ornament.Collecions.Concurrent
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class ConcurrentSkipList<T> : SkipList<T>, IProducerConsumerCollection<T>, IDisposable
     {
         private readonly ReaderWriterLockSlim _lock = new ReaderWriterLockSlim();
-
+        /// <summary>
+        /// 
+        /// </summary>
         public void Dispose()
         {
             ((IDisposable) _lock).Dispose();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public override IEnumerator<T> GetEnumerator()
         {
             IEnumerator<T> enumerator;
@@ -28,13 +37,21 @@ namespace Ornament.Collecions.Concurrent
             }
             return enumerator;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
         public bool TryAdd(T item)
         {
             Add(item);
             return true;
         }
-
+        /// <summary>
+        /// /
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
         public bool TryTake(out T item)
         {
             item = default(T);
@@ -62,7 +79,10 @@ namespace Ornament.Collecions.Concurrent
             item = node.Item;
             return true;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public T[] ToArray()
         {
             T[] array;
@@ -78,7 +98,11 @@ namespace Ornament.Collecions.Concurrent
             }
             return array;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="array"></param>
+        /// <param name="arrayIndex"></param>
         public override void CopyTo(Array array, int arrayIndex)
         {
             _lock.EnterReadLock();
@@ -91,17 +115,23 @@ namespace Ornament.Collecions.Concurrent
                 _lock.ExitReadLock();
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public object SyncRoot
         {
             get { throw new NotSupportedException(""); }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public bool IsSynchronized
         {
             get { return false; }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public override void Clear()
         {
             _lock.EnterWriteLock();
@@ -114,7 +144,11 @@ namespace Ornament.Collecions.Concurrent
                 _lock.ExitWriteLock();
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
         public override bool Contains(T item)
         {
             Node node;
@@ -140,7 +174,10 @@ namespace Ornament.Collecions.Concurrent
 
             return CompareNode(node, item) == 0;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="item"></param>
         public override void Add(T item)
         {
             _lock.EnterUpgradeableReadLock();
@@ -163,7 +200,11 @@ namespace Ornament.Collecions.Concurrent
                 _lock.ExitUpgradeableReadLock();
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
         public override bool Remove(T item)
         {
             _lock.EnterUpgradeableReadLock();
@@ -191,7 +232,10 @@ namespace Ornament.Collecions.Concurrent
 
             return true;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public override T GetLast()
         {
             _lock.EnterReadLock();
@@ -204,7 +248,10 @@ namespace Ornament.Collecions.Concurrent
                 _lock.ExitReadLock();
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public override T Peek()
         {
             _lock.EnterReadLock();
@@ -217,7 +264,10 @@ namespace Ornament.Collecions.Concurrent
                 _lock.ExitReadLock();
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public override T Take()
         {
             _lock.EnterWriteLock();
@@ -230,7 +280,10 @@ namespace Ornament.Collecions.Concurrent
                 _lock.ExitWriteLock();
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public override T TakeLast()
         {
             _lock.EnterWriteLock();
@@ -243,7 +296,11 @@ namespace Ornament.Collecions.Concurrent
                 _lock.ExitWriteLock();
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
         public override T Floor(T item)
         {
             _lock.EnterUpgradeableReadLock();
@@ -256,7 +313,11 @@ namespace Ornament.Collecions.Concurrent
                 _lock.ExitUpgradeableReadLock();
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
         public override T Ceiling(T item)
         {
             _lock.EnterUpgradeableReadLock();
@@ -269,7 +330,14 @@ namespace Ornament.Collecions.Concurrent
                 _lock.ExitUpgradeableReadLock();
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="fromItem"></param>
+        /// <param name="toItem"></param>
+        /// <param name="includeFromItem"></param>
+        /// <param name="includeToItem"></param>
+        /// <returns></returns>
         public override IEnumerable<T> Range(T fromItem, T toItem, bool includeFromItem = true,
             bool includeToItem = true)
         {
@@ -283,7 +351,10 @@ namespace Ornament.Collecions.Concurrent
                 _lock.ExitReadLock();
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="node"></param>
         protected internal override void SetLastFoundNode(Node node)
         {
             var hasOuterWriteLock = _lock.IsWriteLockHeld;
