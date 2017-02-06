@@ -1,5 +1,5 @@
 ﻿using System;
-using Ornament.Domain.Stores;
+using Ornament.Stores;
 using Ornament.Uow;
 
 namespace Ornament.Stores

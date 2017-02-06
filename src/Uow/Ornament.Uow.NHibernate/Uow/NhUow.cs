@@ -1,14 +1,12 @@
 ﻿using System;
 using NHibernate;
-using Ornament.Domain.Uow;
-
-namespace Ornament.NHibernate.Uow
+namespace Ornament.Uow
 {
     /// <summary>
     ///     Class NhUow.
     /// </summary>
     /// <seealso cref="Ornament.Domain.Uow.IUnitOfWork" />
-    public class NhUow : IUnitOfWork
+    public class NhUow : Ornament.Uow.IUnitOfWork
     {
         /// <summary>
         ///     The session factory

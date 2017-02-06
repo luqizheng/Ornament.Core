@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace Ornament.Domain.Entities
+namespace Ornament.Entities
 {
     /// <summary>
     ///     This serves as a base interface for <see cref="EntityWithTypedId{TId}" /> and

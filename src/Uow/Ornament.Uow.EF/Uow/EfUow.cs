@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
-using Ornament.Domain.Uow;
+using Ornament.Uow;
 
 namespace Ornament.Uow
 {

@@ -5,7 +5,7 @@ using System.Reflection;
 
 
 
-namespace Ornament.Domain.Entities
+namespace Ornament.Entities
 {
     /// <summary>
     ///     For a discussion of this object, see

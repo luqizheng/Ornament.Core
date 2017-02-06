@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Ornament.Domain.Entities
+namespace Ornament.Entities
 {
     /// <summary>
     ///     Provides a base class for your objects which will be persisted to the database.

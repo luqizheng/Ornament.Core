@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Ornament.Domain.Entities
+namespace Ornament.Entities
 {
     /// <summary>
     ///     Provides a comparer for supporting LINQ methods such as Intersect, Union and Distinct.

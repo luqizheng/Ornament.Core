@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq;
-using Ornament.Domain.Uow;
+using Ornament.Uow;
 
-namespace Ornament.Domain.Stores
+namespace Ornament.Stores
 {
     /// <summary>
     /// </summary>

@@ -1,7 +1,7 @@
 ﻿using System;
-using Ornament.Domain.Uow;
+using Ornament.Uow;
 
-namespace Ornament.Domain.Stores
+namespace Ornament.Stores
 {
     /// <summary>
     ///     Class StoreBase.

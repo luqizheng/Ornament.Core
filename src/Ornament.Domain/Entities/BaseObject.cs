@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace Ornament.Domain.Entities
+namespace Ornament.Entities
 {
     /// <summary>
     ///     Provides a standard base class for facilitating comparison of objects.

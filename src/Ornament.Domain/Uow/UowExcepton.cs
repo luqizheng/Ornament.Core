@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Ornament.Domain.Uow
+namespace Ornament.Uow
 {
     public class UowExcepton : Exception
     {

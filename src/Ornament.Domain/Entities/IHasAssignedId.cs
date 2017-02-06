@@ -1,4 +1,4 @@
-﻿namespace Ornament.Domain.Entities
+﻿namespace Ornament.Entities
 {
     /// <summary>
     ///     Defines the public members of a class that supports setting an assigned ID of an object.

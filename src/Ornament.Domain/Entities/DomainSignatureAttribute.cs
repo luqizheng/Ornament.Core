@@ -1,6 +1,6 @@
 using System;
 
-namespace Ornament.Domain.Entities
+namespace Ornament.Entities
 {
     /// <summary>
     ///     Facilitates indicating which property(s) describe the unique signature of an

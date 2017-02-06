@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Data;
-using Ornament.Domain.Uow;
+using Ornament.Uow;
 
 namespace Ornament.Uow.Web
 {

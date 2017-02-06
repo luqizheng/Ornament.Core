@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
-using Ornament.Domain.Stores;
+using Ornament.Stores;
 using Ornament.Uow;
 
 namespace Ornament.Stores

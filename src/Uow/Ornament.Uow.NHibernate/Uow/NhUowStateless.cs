@@ -1,8 +1,7 @@
 ﻿using System;
 using NHibernate;
-using Ornament.Domain.Uow;
-
-namespace Ornament.NHibernate.Uow
+using Ornament.Uow;
+namespace Ornament.Uow
 {
     public class NhUowStateless : IUnitOfWork
     {
@@ -13,7 +12,7 @@ namespace Ornament.NHibernate.Uow
         public NhUowStateless(ISessionFactory sessionFactory, bool useTransaction = true)
         {
             if (sessionFactory == null) throw new ArgumentNullException(nameof(sessionFactory));
-            _sessionFactory = sessionFactory;
+            _sessionFactory = sessionFactory; 
             _useTransaction = useTransaction;
         }
         public void Begin()
