@@ -1,25 +1,28 @@
 {
-  "version": "0.2.1-*",
-  "packOptions": {
+    "version": "0.2.2-*",
+    "packOptions": {
 
-    "repository": {
-      "url": "https://github.com/luqizheng/Ornament.Core"
+        "repository": {
+            "url": "https://github.com/luqizheng/Ornament.Core"
+        },
+        "projectUrl": "https://github.com/luqizheng/Ornament.Core",
+        "tags": ["Ornament", "UOW", "Unit of work", "MVC", "asp.core", ".net core"],
+        "summary": "Web for Unit of work. For learn, use Abp pls"
     },
-    "projectUrl": "https://github.com/luqizheng/Ornament.Core",
-    "tags": [ "Ornament", "UOW", "Unit of work", "MVC", "asp.core", ".net core" ],
-    "summary": "Web for Unit of work. For learn, use Abp pls"
-  },
-  "dependencies": {
-    "Microsoft.AspNetCore.Mvc": "1.1.0",
-    "NETStandard.Library": "1.6.1",
-    "Ornament.Domain": "1.0.3",
-    "Ornament.Uow.DbConnection": "1.1.2-*",
-    "System.Data.Common": "4.3.0"
-  },
+    "dependencies": {
+        "Microsoft.AspNetCore.Mvc": "1.1.0",
+        "NETStandard.Library": "1.6.1",
+        "Ornament.Domain": "1.0.3",
+        "Ornament.Uow.DbConnection": "1.1.2-*",
+        "System.Data.Common": "4.3.0"
+    },
 
-  "frameworks": {
-    "netstandard1.6": {
-      "imports": "dnxcore50"
+    "frameworks": {
+        "netstandard1.6": {
+            "imports": "dnxcore50"
+        },
+        "net461": {
+            "imports": ["net451", "net462"]
+        }
     }
-  }
 }

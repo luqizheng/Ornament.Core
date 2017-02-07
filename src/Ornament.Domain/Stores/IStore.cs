@@ -16,5 +16,10 @@ namespace Ornament.Stores
         /// get unit of work instance.
         /// </summary>
         IUnitOfWork Uow { get; }
+
+        T Get(TId id);
+
+        void Delete(TId id);
+        
     }
 }

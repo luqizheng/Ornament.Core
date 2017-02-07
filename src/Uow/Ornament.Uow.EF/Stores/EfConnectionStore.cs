@@ -21,5 +21,7 @@ namespace Ornament.Stores
         protected EfConnectionStore(EfUow<TDbContext> context) : base(context)
         {
         }
+
+   
     }
 }

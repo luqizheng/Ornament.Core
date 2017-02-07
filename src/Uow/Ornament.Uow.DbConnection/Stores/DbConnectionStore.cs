@@ -19,5 +19,7 @@ namespace Ornament.Stores
         protected DbConnectionStore(DbUow context) : base(context)
         {
         }
+
+
     }
 }

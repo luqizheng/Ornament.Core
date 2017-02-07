@@ -33,7 +33,13 @@ namespace Ornament.Stores
             Context.Delete(t);
         }
 
-        public T Get(TId id)
+        public override void Delete(TId id)
+        {
+            var t=Get(id);
+            Context.Delete(t);
+        }
+
+        public override T Get(TId id)
         {
             return Context.Get<T>(id);
         }
@@ -62,5 +68,6 @@ namespace Ornament.Stores
         {
             Context.Flush();
         }
+
     }
 }

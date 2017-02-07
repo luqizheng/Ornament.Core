@@ -102,5 +102,12 @@ namespace Ornament.Stores
         {
             _disposed = true;
         }
+
+        
+        public abstract T Get(TId id);
+
+        public abstract void Delete(TId id);
+
+        
     }
 }

@@ -1,37 +1,37 @@
 {
-  "version": "1.1.3-*",
-  "buildOptions": {
-    "debugType": "portable"
-  },
-  "dependencies": {
-    "Ornament.Domain": "1.1.3-*",
-    "System.Data.Common": "4.3.0",
-
-    "System.Data.SqlClient": "4.3.0"
-  },
-  "packOptions": {
-
-    "repository": {
-      "url": "https://github.com/luqizheng/Ornament.Core"
+    "version": "1.1.4-*",
+    "buildOptions": {
+        "debugType": "portable"
     },
-    "projectUrl": "https://github.com/luqizheng/Ornament.Core",
-    "tags": [ "Ornament", "UOW", "Unit of work", "dotnet core", "Sql", "SqlConnection",".net core"],
-    "summary": "DBConnection for Unit of work. For learn, use Abp pls"
-  },
-  "frameworks": {
-    "net461": {
-      "frameworkAssemblies": {
-        "System.ComponentModel.Composition": "4.0.0.0",
-        "System.ComponentModel.DataAnnotations": "4.0.0.0"
-      }
+    "dependencies": {
+        "Ornament.Domain": "1.1.4-*",
+        "System.Data.Common": "4.3.0",
+
+        "System.Data.SqlClient": "4.3.0"
     },
-    "netstandard1.6": {
-      "dependencies": {
-        "NETStandard.Library": "1.6.1"
-      }
+    "packOptions": {
+
+        "repository": {
+            "url": "https://github.com/luqizheng/Ornament.Core"
+        },
+        "projectUrl": "https://github.com/luqizheng/Ornament.Core",
+        "tags": ["Ornament", "UOW", "Unit of work", "dotnet core", "Sql", "SqlConnection", ".net core"],
+        "summary": "DBConnection for Unit of work. For learn, use Abp pls"
+    },
+    "frameworks": {
+        "net461": {
+            "frameworkAssemblies": {
+                "System.ComponentModel.Composition": "4.0.0.0",
+                "System.ComponentModel.DataAnnotations": "4.0.0.0"
+            }
+        },
+        "netstandard1.6": {
+            "dependencies": {
+                "NETStandard.Library": "1.6.1"
+            }
+        }
+    },
+    "tools": {
+
     }
-  },
-  "tools": {
-
-  }
 }
