@@ -6,25 +6,21 @@ using Ornament.Uow;
 
 namespace Ornament.Stores
 {
-    public abstract class Store<T, TId,TUow> : Ornament.Stores.StoreBase<T, TId, TUow>
-        where TUow :NhUow
+    public class NhStore<T, TId, TUow> : StoreBase<T, TId, TUow>
+        where TUow : NhUow
         where TId : IEquatable<TId>
         where T : class
 
     {
-        protected Store(TUow context) : base(context)
+        protected NhStore(TUow context) : base(context)
         {
         }
 
 
-        protected ISession Context
-        {
-            get { return ((NhUow)this.Context).Session; }
-        }
+        protected ISession Context => ((NhUow) Context).Session;
 
 
         public IQueryable<T> Entities => Context.Query<T>();
-
 
 
         public void SaveOrUpdate(T t)
@@ -66,6 +62,5 @@ namespace Ornament.Stores
         {
             Context.Flush();
         }
-
     }
 }

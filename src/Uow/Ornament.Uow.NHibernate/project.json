@@ -1,34 +1,34 @@
 {
-  "version": "1.0.0-*",
+  "version": "1.0.1-*",
 
-  "dependencies": {
-    "Microsoft.Extensions.DependencyInjection.Abstractions": "1.1.0",
-    "NETStandard.Library": "1.6.1",
-    "Ornament.Domain": "1.0.3-*",
-    "System.Data.Common": "4.3.0"
-  },
-  "packOptions": {
-
-    "repository": {
-      "url": "https://github.com/luqizheng/Ornament.Core"
+    "dependencies": {
+        "Microsoft.Extensions.DependencyInjection.Abstractions": "1.1.0",
+        "NETStandard.Library": "1.6.1",
+        "Ornament.Domain": "1.1.3-*",
+        "System.Data.Common": "4.3.0"
     },
-    "projectUrl": "https://github.com/luqizheng/Ornament.Core",
-    "tags": [ "Ornament", "UOW", "Unit of work", " core", "nh", "nhibernate","dotnet core",".net core" ],
-    "summary": "DBConnection for Unit of work. For learn, use Abp pls"
-  },
-  "frameworks": {
-    // "netstandard1.6": {
-    //   "imports": [ "dnxcore50", "net461", "net451" ]
-    // },
-    "net461": {
-      "imports": "dnxcore50",
-      "dependencies": {
-        "FluentNHibernate": "2.0.3",
-        "NHibernate": "4.1.1.4000"
-      },
-      "frameworkAssemblies": {
-        "System": "4.0.0.0"
-      }
+    "packOptions": {
+
+        "repository": {
+            "url": "https://github.com/luqizheng/Ornament.Core"
+        },
+        "projectUrl": "https://github.com/luqizheng/Ornament.Core",
+        "tags": ["Ornament", "UOW", "Unit of work", " core", "nh", "nhibernate", "dotnet core", ".net core"],
+        "summary": "DBConnection for Unit of work. For learn, use Abp pls"
+    },
+    "frameworks": {
+        // "netstandard1.6": {
+        //   "imports": [ "dnxcore50", "net461", "net451" ]
+        // },
+        "net461": {
+            "imports": "dnxcore50",
+            "dependencies": {
+                "FluentNHibernate": "2.0.3",
+                "NHibernate": "4.1.1.4000"
+            },
+            "frameworkAssemblies": {
+                "System": "4.0.0.0"
+            }
+        }
     }
-  }
 }
