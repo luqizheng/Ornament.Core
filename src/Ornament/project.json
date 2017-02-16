@@ -17,15 +17,9 @@
     "summary": "Utility class for Ornament.For learn, use Abp pls"
   },
   "frameworks": {
-    "net461": {
-     
-      "frameworkAssemblies": {
-        "System.ComponentModel.Composition": "4.0.0.0",
-        "System.ComponentModel.DataAnnotations": "4.0.0.0"
-      }
-    },
+ 
     "netstandard1.6": {
-      "imports": [ "dnxcore50", "net461" ],
+      "imports": [ "dnxcore50", "net461","net40","net45" ],
       "dependencies": {
         "System.Linq": "4.3.0",
         "System.ComponentModel.Annotations": "4.3.0",

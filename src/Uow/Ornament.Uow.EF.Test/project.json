@@ -6,9 +6,9 @@
   "dependencies": {
     "System.Runtime.Serialization.Primitives": "4.3.0",
     "xunit": "2.1.0",
-    "dotnet-test-xunit": "1.0.0-rc2-192208-24",
+    "dotnet-test-xunit": "2.2.0-preview2-build1029",
     "Microsoft.EntityFrameworkCore.InMemory": "1.1.0",
-    "Ornament.Uow.EF": "0.1.0-*",
+    "Ornament.Uow.EF": "0.1.1-*",
     "System.ComponentModel": "4.3.0",
     "Microsoft.Extensions.DependencyInjection.Abstractions": "1.1.0"
   },

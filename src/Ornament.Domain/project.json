@@ -2,7 +2,7 @@
     "title": "Ornament.Domain",
     "copyright": "MIT",
     "description": "DDD helper lib",
-    "version": "1.1.4",
+    "version": "1.1.5-alpha",
     "buildOptions": {
         "debugType": "portable"
     },
@@ -28,17 +28,13 @@
         "summary": "DDD implement.For learn, use Abp pls"
     },
     "frameworks": {
-        "net461": {
-            "frameworkAssemblies": {
-                "System.ComponentModel.Composition": "4.0.0.0",
-                "System.ComponentModel.DataAnnotations": "4.0.0.0"
-            }
-        },
-        "netstandard1.6": {
-            "dependencies": {
-                "System.Linq": "4.3.0",
-                "System.Collections.Concurrent": "4.3.0"
-            }
+
+      "netstandard1.6": {
+        "imports": [ "dnxcore50", "net461", "net40", "net45" ],
+        "dependencies": {
+          "System.Linq": "4.3.0",
+          "System.Collections.Concurrent": "4.3.0"
         }
+      }
     }
 }
