@@ -33,5 +33,15 @@ namespace Ornament.UnitTest
         {
 
         }
+
+        public override AEntity Get(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using FluentNHibernate.Cfg;
 using NHibernate;
 using NHibernate.Tool.hbm2ddl;
@@ -43,7 +44,7 @@ namespace Ornament
         public NhUowFactoryBase AddAssemblyOf(Type typeOfMappingClass)
         {
             _config.Mappings(m =>
-                m.FluentMappings.AddFromAssembly(typeOfMappingClass.Assembly));
+                m.FluentMappings.AddFromAssembly(typeOfMappingClass.GetTypeInfo().Assembly));
 
             return this;
         }

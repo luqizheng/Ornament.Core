@@ -1,36 +1,29 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Ornament.Uow.DbConnection", "Uow\Ornament.Uow.DbConnection\Ornament.Uow.DbConnection.xproj", "{21501337-4DAD-4AA8-8854-0883730CF89D}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6F7A6AED-BD59-4FAA-9374-75BF3C98FB47}"
-	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
-	EndProjectSection
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Ornament.Domain", "Ornament.Domain\Ornament.Domain.xproj", "{11967762-50BC-4922-AE01-A23101ECEFBE}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Ornament", "Ornament\Ornament.xproj", "{5201B99C-D330-48E1-9A66-9F803A75556B}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Ornament.UnitTest", "Ornament.UnitTest\Ornament.UnitTest.xproj", "{C088E199-01C1-4399-9E20-9797AFE096AE}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Ornament.Uow.Web", "Ornament.Uow.Web\Ornament.Uow.Web.xproj", "{078ACCEC-2C39-43AF-81C5-0CD5F9AB64C4}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Ornament.Uow.EF", "Uow\Ornament.Uow.EF\Ornament.Uow.EF.xproj", "{698F6CF8-DD24-49EE-BC81-DC023C3D0504}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Uow", "Uow", "{FCE58AE1-5173-401C-A41D-23022F1FB3C4}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Ornament.Uow.EF.Test", "Uow\Ornament.Uow.EF.Test\Ornament.Uow.EF.Test.xproj", "{816F6E14-F62E-436A-AC8B-902318D27716}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebExamples", "WebExamples", "{4BF5CC5E-46F7-4E44-9B91-42544DCD7B9D}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "NHWeb", "NHWeb\NHWeb.xproj", "{AA218DD7-FADF-46A5-B4F5-8BCF1E4B708B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ornament.Uow.DbConnection", "Uow\Ornament.Uow.DbConnection\Ornament.Uow.DbConnection.csproj", "{21501337-4DAD-4AA8-8854-0883730CF89D}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Ornament.Uow.NHibernate", "Uow\Ornament.Uow.NHibernate\Ornament.Uow.NHibernate.xproj", "{D8702B6A-842D-48DA-8886-1DC2D3A4478B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ornament.Domain", "Ornament.Domain\Ornament.Domain.csproj", "{11967762-50BC-4922-AE01-A23101ECEFBE}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Ornament.Uow.NHibernate.Sqlite", "Uow\Ornament.Uow.NHibernate.Sqlite\Ornament.Uow.NHibernate.Sqlite.xproj", "{506E9E60-7B28-43CE-8989-61ADC12FAC20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ornament", "Ornament\Ornament.csproj", "{5201B99C-D330-48E1-9A66-9F803A75556B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ornament.UnitTest", "Ornament.UnitTest\Ornament.UnitTest.csproj", "{C088E199-01C1-4399-9E20-9797AFE096AE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ornament.Uow.Web", "Ornament.Uow.Web\Ornament.Uow.Web.csproj", "{078ACCEC-2C39-43AF-81C5-0CD5F9AB64C4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ornament.Uow.EF", "Uow\Ornament.Uow.EF\Ornament.Uow.EF.csproj", "{698F6CF8-DD24-49EE-BC81-DC023C3D0504}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ornament.Uow.EF.Test", "Uow\Ornament.Uow.EF.Test\Ornament.Uow.EF.Test.csproj", "{816F6E14-F62E-436A-AC8B-902318D27716}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ornament.Uow.NHibernate", "Uow\Ornament.Uow.NHibernate\Ornament.Uow.NHibernate.csproj", "{D8702B6A-842D-48DA-8886-1DC2D3A4478B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -66,18 +59,10 @@ Global
 		{816F6E14-F62E-436A-AC8B-902318D27716}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{816F6E14-F62E-436A-AC8B-902318D27716}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{816F6E14-F62E-436A-AC8B-902318D27716}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AA218DD7-FADF-46A5-B4F5-8BCF1E4B708B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AA218DD7-FADF-46A5-B4F5-8BCF1E4B708B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AA218DD7-FADF-46A5-B4F5-8BCF1E4B708B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AA218DD7-FADF-46A5-B4F5-8BCF1E4B708B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D8702B6A-842D-48DA-8886-1DC2D3A4478B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D8702B6A-842D-48DA-8886-1DC2D3A4478B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8702B6A-842D-48DA-8886-1DC2D3A4478B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8702B6A-842D-48DA-8886-1DC2D3A4478B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{506E9E60-7B28-43CE-8989-61ADC12FAC20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{506E9E60-7B28-43CE-8989-61ADC12FAC20}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{506E9E60-7B28-43CE-8989-61ADC12FAC20}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{506E9E60-7B28-43CE-8989-61ADC12FAC20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,8 +71,6 @@ Global
 		{21501337-4DAD-4AA8-8854-0883730CF89D} = {FCE58AE1-5173-401C-A41D-23022F1FB3C4}
 		{698F6CF8-DD24-49EE-BC81-DC023C3D0504} = {FCE58AE1-5173-401C-A41D-23022F1FB3C4}
 		{816F6E14-F62E-436A-AC8B-902318D27716} = {FCE58AE1-5173-401C-A41D-23022F1FB3C4}
-		{AA218DD7-FADF-46A5-B4F5-8BCF1E4B708B} = {4BF5CC5E-46F7-4E44-9B91-42544DCD7B9D}
 		{D8702B6A-842D-48DA-8886-1DC2D3A4478B} = {FCE58AE1-5173-401C-A41D-23022F1FB3C4}
-		{506E9E60-7B28-43CE-8989-61ADC12FAC20} = {FCE58AE1-5173-401C-A41D-23022F1FB3C4}
 	EndGlobalSection
 EndGlobal
