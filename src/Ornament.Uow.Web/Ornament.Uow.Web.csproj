@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <VersionPrefix>0.2.2</VersionPrefix>
+    <TargetFramework>netstandard1.6</TargetFramework>
+    <AssemblyName>Ornament.Uow.Web</AssemblyName>
+    <PackageId>Ornament.Uow.Web</PackageId>
+    <PackageTags>Ornament;UOW;Unit of work;MVC;asp.core;.net core</PackageTags>
+    <PackageProjectUrl>https://github.com/luqizheng/Ornament.Core</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/luqizheng/Ornament.Core</RepositoryUrl>
+    <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
+    <PackageTargetFallback>$(PackageTargetFallback);dnxcore50;net461;net40;net45</PackageTargetFallback>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ornament.Domain\Ornament.Domain.csproj" />
+    <ProjectReference Include="..\Uow\Ornament.Uow.DbConnection\Ornament.Uow.DbConnection.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
+    <PackageReference Include="System.Data.Common" Version="4.3.0" />
+  </ItemGroup>
+
+</Project>

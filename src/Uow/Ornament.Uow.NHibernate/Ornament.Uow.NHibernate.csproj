@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <VersionPrefix>1.0.3.14-alpha</VersionPrefix>
+    <TargetFramework>net461</TargetFramework>
+    <AssemblyName>Ornament.Uow.NHibernate</AssemblyName>
+    <PackageId>Ornament.Uow.NHibernate</PackageId>
+    <PackageTags>Ornament;UOW;Unit of work; core;nh;nhibernate;dotnet core;.net core</PackageTags>
+    <PackageProjectUrl>https://github.com/luqizheng/Ornament.Core</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/luqizheng/Ornament.Core</RepositoryUrl>
+    <RuntimeIdentifiers>win7;win8</RuntimeIdentifiers>
+    <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
+    <PackageTargetFallback>$(PackageTargetFallback);portable-net4+win7;net462;portable-net45+win8;netstandard1.6</PackageTargetFallback>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Ornament.Domain\Ornament.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="1.1.0" />
+    <PackageReference Include="System.Data.Common" Version="4.3.0" />
+    <PackageReference Include="FluentNHibernate" Version="2.0.3" />
+    <PackageReference Include="NHibernate" Version="4.1.1.4000" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+</Project>

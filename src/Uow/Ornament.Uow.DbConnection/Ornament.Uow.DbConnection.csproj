@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <VersionPrefix>1.1.5</VersionPrefix>
+    <TargetFramework>netstandard1.6</TargetFramework>
+    <DebugType>portable</DebugType>
+    <AssemblyName>Ornament.Uow.DbConnection</AssemblyName>
+    <PackageId>Ornament.Uow.DbConnection</PackageId>
+    <PackageTags>Ornament;UOW;Unit of work;dotnet core;Sql;SqlConnection;.net core</PackageTags>
+    <PackageProjectUrl>https://github.com/luqizheng/Ornament.Core</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/luqizheng/Ornament.Core</RepositoryUrl>
+    <PackageTargetFallback>$(PackageTargetFallback);dnxcore50;net461;net40;net45</PackageTargetFallback>
+    <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Ornament.Domain\Ornament.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.Common" Version="4.3.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.3.0" />
+  </ItemGroup>
+
+</Project>
