@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Ornament.Stores;
 using Ornament.Uow;
@@ -22,6 +23,6 @@ namespace Ornament.Stores
         {
         }
 
-   
+        public DbSet<T> Entities => this.Uow.Context.Set<T>();
     }
 }
