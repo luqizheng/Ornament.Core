@@ -14,7 +14,7 @@ namespace Ornament.Entities
     ///     and http://groups.google.com/group/sharp-architecture/browse_thread/thread/f76d1678e68e3ece?hl=en for
     ///     an in depth and conclusive resolution.
     /// </remarks>
-#if !NETSTANDARD1_6
+#if !NETSTANDARD2_0
     [Serializable]
 #endif
     public abstract class BaseObject

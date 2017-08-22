@@ -16,7 +16,7 @@ namespace Ornament.Uow
                 dbContextOptions(result);
                 return result;
             });
-            services.AddScoped<TDbContext>();
+            services.AddTransient<TDbContext>();
             services.AddScoped(sp =>
             {
                 var dbContext = sp.GetRequiredService<TDbContext>();

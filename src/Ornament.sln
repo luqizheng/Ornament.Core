@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+VisualStudioVersion = 15.0.26730.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6F7A6AED-BD59-4FAA-9374-75BF3C98FB47}"
 EndProject
@@ -19,11 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ornament.Uow.EF", "Uow\Orna
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ornament.Uow.EF.Test", "Uow\Ornament.Uow.EF.Test\Ornament.Uow.EF.Test.csproj", "{816F6E14-F62E-436A-AC8B-902318D27716}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ornament.Uow.NHibernate", "Uow\Ornament.Uow.NHibernate\Ornament.Uow.NHibernate.csproj", "{D8702B6A-842D-48DA-8886-1DC2D3A4478B}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTest", "UnitTest", "{11068688-B0BB-49B5-B118-3697CC8F167A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ornament.UnitTest", "UnitTests\Ornament.UnitTest\Ornament.UnitTest.csproj", "{397CA151-FA68-438C-A9E2-7821E94FE1FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ornament.UnitTest", "UnitTests\Ornament.UnitTest\Ornament.UnitTest.csproj", "{397CA151-FA68-438C-A9E2-7821E94FE1FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,10 +53,6 @@ Global
 		{816F6E14-F62E-436A-AC8B-902318D27716}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{816F6E14-F62E-436A-AC8B-902318D27716}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{816F6E14-F62E-436A-AC8B-902318D27716}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D8702B6A-842D-48DA-8886-1DC2D3A4478B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D8702B6A-842D-48DA-8886-1DC2D3A4478B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D8702B6A-842D-48DA-8886-1DC2D3A4478B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D8702B6A-842D-48DA-8886-1DC2D3A4478B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{397CA151-FA68-438C-A9E2-7821E94FE1FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{397CA151-FA68-438C-A9E2-7821E94FE1FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{397CA151-FA68-438C-A9E2-7821E94FE1FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -71,7 +65,9 @@ Global
 		{21501337-4DAD-4AA8-8854-0883730CF89D} = {FCE58AE1-5173-401C-A41D-23022F1FB3C4}
 		{698F6CF8-DD24-49EE-BC81-DC023C3D0504} = {FCE58AE1-5173-401C-A41D-23022F1FB3C4}
 		{816F6E14-F62E-436A-AC8B-902318D27716} = {FCE58AE1-5173-401C-A41D-23022F1FB3C4}
-		{D8702B6A-842D-48DA-8886-1DC2D3A4478B} = {FCE58AE1-5173-401C-A41D-23022F1FB3C4}
 		{397CA151-FA68-438C-A9E2-7821E94FE1FA} = {11068688-B0BB-49B5-B118-3697CC8F167A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7F45DF06-800F-4D77-A1A0-B1408FF60F7D}
 	EndGlobalSection
 EndGlobal
