@@ -295,5 +295,14 @@ namespace Ornament
                 return false;
             }
         }
+        static public explicit operator long(Time n)
+        {
+            return n.Ticks;
+        }
+
+        static public explicit operator Time(long t)
+        {
+            return new Time(t);
+        }
     }
 }
