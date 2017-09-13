@@ -62,6 +62,9 @@ namespace Ornament
         /// </summary>
         public int Millseconds => _ticks.Milliseconds;
 
+        public static Time Min = new Time(0, 0, 0, 0);
+        public static Time Max = new Time(23, 59, 29, 999);
+
         /// <summary>
         ///     Return a new time instance after add special number of hours to this instance
         /// </summary>

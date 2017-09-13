@@ -57,7 +57,7 @@ namespace Ornament.Collecions
         {
             if (capacity <= 0)
                 throw new ArgumentOutOfRangeException("capacity", "Expected capacity greater than zero.");
-#if !NETSTANDARD1_6
+#if !NETSTANDARD2_0
             // If no comparer then T must be comparable
             if ((comparer == null) &&
                 !(typeof(IComparable).IsAssignableFrom(typeof(T)) ||
