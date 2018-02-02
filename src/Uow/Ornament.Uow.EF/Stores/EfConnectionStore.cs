@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using Ornament.Domain.Stores;
 using Ornament.Stores;
 using Ornament.Uow;
 

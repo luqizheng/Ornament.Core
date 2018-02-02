@@ -60,7 +60,7 @@ namespace Ornament.Uow
         /// </summary>
         public void Commit()
         {
-            if (EnableTransaction)
+            if (Context.Database.CurrentTransaction != null)
                 Context.Database.CommitTransaction();
             Context.SaveChanges();
         }
